@@ -6,6 +6,8 @@ root.title("Simple calculator")
 entry_field = Entry(root, width=35, borderwidth=5)
 entry_field.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
+
+
 def button_click(number):
     current_number = entry_field.get()
     entry_field.delete(0, END)
@@ -19,22 +21,47 @@ def button_clear():
 def button_plus():
     first_number = entry_field.get()
     global f_num
+    global math 
+    math = "addition"
     f_num = int(first_number)
     entry_field.delete(0, END)
 
 def button_equal():
     second_number = entry_field.get()
     entry_field.delete(0, END)
-    entry_field.insert(0, f_num + int(second_number))
+    if math == "addition":
+        entry_field.insert(0, f_num + int(second_number))
+    elif math == "multiplication":
+        entry_field.insert(0, f_num * int(second_number))
+    elif math == "subtraction":
+        entry_field.insert(0, f_num - int(second_number))
+    
+    elif math == "division":
+        entry_field.insert(0, f_num / int(second_number))
 
 def button_subtract():
-    pass
+    first_number = entry_field.get()
+    global f_num
+    global math 
+    math = "subtraction"
+    f_num = int(first_number)
+    entry_field.delete(0, END)
 
 def button_multiply():
-    pass
+    first_number = entry_field.get()
+    global f_num
+    global math 
+    math = "multiplication"
+    f_num = int(first_number)
+    entry_field.delete(0, END)
 
 def button_divide():
-    pass
+    first_number = entry_field.get()
+    global f_num
+    global math 
+    math = "division"
+    f_num = int(first_number)
+    entry_field.delete(0, END)
 
 
 
