@@ -1,31 +1,38 @@
 from tkinter import *
-from tkinter import ttk
+
+
+
 window = Tk()
-window.minsize(width=700, height=500)
-
-window.title("First GUI app")
-
-my_label = Label(text="I am a label", font=("Arial", 24))
-my_label.pack()
-
-
-my_label.config(text="My name is Hassan")
+window.minsize(width=500, height=300)
+window.title("Mile to Km Converter")
 
 
 def button_clicked():
-    new_text = input.get()
-    my_label.config(text=new_text)
+    
+    input_value = float(input.get())
+    km = input_value * 1.6
+    out_put.config(text=f"{km}")
+
+
+input = Entry()
+input.grid(row=0, column=1)
 
 
 
-button = Button(text="Click here", command=button_clicked).pack()
+miles_label = Label(text="Miles").grid(row=0, column=2)
 
 
+equal_label = Label(text="Equale to")
+equal_label.grid(row=1, column=0)
 
-input = Entry(width=75).pack()
+out_put = Label(text="0")
+out_put.grid(row=1, column=1)
 
+kilos_label = Label(text="KM")
+kilos_label.grid(row=1, column=2)
 
-
+calculate = Button(text="Calculate", command=button_clicked)
+calculate.grid(row=2, column=1)
 
 
 
