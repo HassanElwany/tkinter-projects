@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 tk = "*"
 pyperclip = "*"
+pandas = "*"
 
 [dev-packages]
 
