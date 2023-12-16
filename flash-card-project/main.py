@@ -28,7 +28,7 @@ class FlashCardApp:
 
         self.cross_image = PhotoImage(file="./images/wrong.png")
         self.unknown_button = Button(
-            image=self.cross_image, highlightthickness=0, command=self.next_card)
+            image=self.cross_image, highlightthickness=0, command=self.is_known)
         self.unknown_button.grid(row=1, column=0)
 
         self.check_image = PhotoImage(file="./images/right.png")
@@ -72,7 +72,11 @@ class FlashCardApp:
         self.canvas.itemconfig(self.canvas_image, image=self.card_front_img)
         self.flipping = self.window.after(3000, self.continuous_flip)
 
-        
+
+    def is_known(self):
+        self.to_learn.remove(self.current_card)
+        self.next_card()
+
         
 
     def flip_card(self):
