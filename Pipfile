@@ -8,6 +8,7 @@ tk = "*"
 pyperclip = "*"
 pandas = "*"
 numpy = "*"
+requests = "*"
 
 [dev-packages]
 
